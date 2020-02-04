@@ -4,31 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>** Pet Shop da RD **</title>
 </head>
 <body>
     <script>
     console.log("********** Pet Shop da RD *************")
-    var cachorro ={
-        nome:"Snoop" , 
-        idade: 6 , 
-        raca: "Fox Paulistinha",
-        peso: 15 , 
-        dono: "Igor",
-        cor: "Marrom",
-        vacinado: false,
-        servicos: ["banho","tosa"]
-    }
-        function vacinar (cachorro) {
-            if(cachorro.vacinado) {
-                console.log( "Já está vacinado!")
+    var pets =[
+        {
+            nome:"Snoop" , 
+            idade: 6,
+            vacinado: false
+        },
+        {
+            nome: "Doguinho",
+            idade: 3,
+            vacinado: true
+        },
+        {
+            nome:"Lady",
+            idade: 5,
+            vacinado: false
+        }];
+        function vacinar (pets) {
+            for (var i = 0;i < pets.length;i++) {
+            if(pets[i].vacinado) {
+                console.log( "Já está vacinado!");
             } else {
-                cachorro.vacinado = true;
-                console.log ("Precisa ser vacinado.")
+                pets[i].vacinado = true;
+                console.log ("Precisa ser vacinado.");
             }
         }
-        
+        }
     
+    function adicionarPet (nome,idade,raca,tipo,peso,cor,dono,vacinado,servicos) {
+        var novoPet ={
+            nome:nome,
+            idade:idade,
+            raca:raca,
+            tipo:tipo,
+            peso:peso,
+            cor:cor,
+            dono:dono,
+            vacinado:vacinado,
+            servicos:servicos
+        }
+        pets.push(novoPet)
+        console.log ("Pet adicionado com sucesso!")
+        return pets
+    }
 
 
 
