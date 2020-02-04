@@ -100,37 +100,24 @@
 
 
         let petsTipoGato = [];
-        const filtrarPetsGatos = () =>{
-            let listaPetsGatos = pets.filter((pets, index)=> {
-                return pets.tipo == "gato"
+        const filtrarPetsGatos = () => {
+            let listaPetsGatos = pets.filter((pets, index) => {
+                return pets.tipo == "gato";
             })
-            return listaPetsGatos
+            return listaPetsGatos;
         }
+        // Filtrar tipo especifico
 
-        const vacinarGeral =() => {
-            pets.map((pet,index)=>{
-                return pets.vacinado = true;
+
+        const vacinarGeral = () => {
+            pets.map((pet, index) => {
+                pets.vacinado = true;
+                return pets;
             })
-            return pets
+
         }
+        // Modifica 1 elemento dentro da Array
     </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-// pets.forEach((pets, index) => {
-    //     if (pets.tipo == "gato")
-    //         petsTipoGato.push(pets)
-    // });
-    // //Filtrar tipo único
