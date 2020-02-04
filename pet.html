@@ -13,19 +13,37 @@
         {
             nome:"Snoop" , 
             idade: 6,
-            vacinado: false
+            raca: "fox",
+            tipo: "cachorro",
+            peso: 9,
+            cor: "marrom",
+            dono: null,
+            vacinado: false,
+            servicos:null
         },
         {
             nome: "Doguinho",
             idade: 3,
-            vacinado: true
+            raca:"pastor alemao",
+            tipo: "cachorro",
+            peso: 20,
+            cor: "preto",
+            dono: null,
+            vacinado: true,
+            servocos:["banho", "tosa"]
         },
         {
             nome:"Lady",
             idade: 5,
-            vacinado: false
+            raca: "siames",
+            tipo: "gato",
+            peso: 5,
+            cor: "branco",
+            dono: null,
+            vacinado: false,
+            servicos:["banho"]
         }];
-        function vacinar (pets) {
+    function vacinar (pets) {
             for (var i = 0;i < pets.length;i++) {
             if(pets[i].vacinado) {
                 console.log( "Já está vacinado!");
@@ -38,23 +56,35 @@
     
     function adicionarPet (nome,idade,raca,tipo,peso,cor,dono,vacinado,servicos) {
         var novoPet ={
-            nome:nome,
-            idade:idade,
-            raca:raca,
-            tipo:tipo,
-            peso:peso,
-            cor:cor,
-            dono:dono,
-            vacinado:vacinado,
-            servicos:servicos
+            nome,
+            idade,
+            raca,
+            tipo,
+            peso,
+            cor,
+            dono,
+            vacinado,
+            servicos
         }
         pets.push(novoPet)
         console.log ("Pet adicionado com sucesso!")
         return pets
     }
-
-
-
+    
+    const exibir = function() {
+        pets.forEach (function(pet,index) {
+            console.log ("--------------------------");
+            console.log ("Nome do Pet: "+ pet.nome);
+            console.log ("Idade do Pet: "+ pet.idade);
+            console.log ("Raça do Pet: "+ pet.raca);
+            console.log ("Tipo do Pet: "+ pet.tipo);
+            console.log ("Peso do Pet: "+ pet.peso);
+            console.log ("Cor do Pet: "+ pet.cor);
+            console.log (pet.vacinado?"Este pet está vacinado!":"Este pet precisa ser vacinado!");
+        });
+    }
+    
+    
     </script>
 </body>
 </html>
