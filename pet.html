@@ -11,7 +11,10 @@
 <body>
     <header>Pet Shop RD</header>
     <script>
-        console.log("********** Pet Shop da RD *************")
+        const EMPRESA = "********** Pet Shop da RD *************"
+        console.log(EMPRESA)
+
+
         let pets = [{
                 nome: "Snoop",
                 idade: 6,
@@ -46,8 +49,10 @@
                 servicos: ["banho"]
             }
         ];
+        // Lista de Pets ~~ var global
 
-        const vacinar = pets => {                 // Aplicar Vacinas !
+
+        const vacinar = pets => {
             pets.forEach((pet, index) => {
                 if (pets.vacinado) {
                     console.log("Já está vacinado!");
@@ -57,8 +62,10 @@
                 }
             });
         }
+        // Aplicar Vacinas !
 
-        const adicionarPet = (nome, idade, raca, tipo, peso, cor, dono, vacinado, servicos) => {    // Adicionar pet á lista
+
+        const adicionarPet = (nome, idade, raca, tipo, peso, cor, dono, vacinado, servicos) => {
             let novoPet = {
                 nome,
                 idade,
@@ -74,8 +81,10 @@
             console.log("Pet adicionado com sucesso!")
             return pets
         }
+        // Adicionar pet á lista
 
-        const exibir = () => {           // Exibir lista de pets
+
+        const exibir = () => {
             pets.forEach((pet, index) => {
                 console.log("--------------------------");
                 console.log("Nome do Pet: " + pet.nome);
@@ -87,7 +96,41 @@
                 console.log(pet.vacinado ? "Este pet está vacinado!" : "Este pet precisa ser vacinado!");
             });
         }
+        // Exibir lista de pets
+
+
+        let petsTipoGato = [];
+        const filtrarPetsGatos = () =>{
+            let listaPetsGatos = pets.filter((pets, index)=> {
+                return pets.tipo == "gato"
+            })
+            return listaPetsGatos
+        }
+
+        const vacinarGeral =() => {
+            pets.map((pet,index)=>{
+                return pets.vacinado = true;
+            })
+            return pets
+        }
     </script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+// pets.forEach((pets, index) => {
+    //     if (pets.tipo == "gato")
+    //         petsTipoGato.push(pets)
+    // });
+    // //Filtrar tipo único
